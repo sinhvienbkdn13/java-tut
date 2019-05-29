@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        table,
+        th,
+        td,
+        tr {
+            border: 1px solid black;
+        }
+        td {
+            width: 10%;   
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tbody id="display">
+
+        </tbody>
+    </table>
+</body>
+<script>
+    var display ="";
+    for (var i = 2; i <= 9; i++) {
+        var line = "<tr>"
+        for (var j = 1; j <= 9; j++) {
+            line += "<td>" + i + "*" + j + "=" + i * j + "</td>"
+        }
+        line += "</tr>"
+        display+=line;
+    }
+    document.getElementById("display").innerHTML = display;
+</script>
+
+</html>
