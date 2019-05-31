@@ -28,10 +28,10 @@
 </body>
 <script>
     var display ="";
-    for (var i = 2; i <= 9; i++) {
+    for (var i = 1; i <= 9; i++) {
         var line = "<tr>"
-        for (var j = 1; j <= 9; j++) {
-            line += "<td>" + i + "*" + j + "=" + i * j + "</td>"
+        for (var j = 2; j <= 9; j++) {
+            line += "<td>" + j + "*" + i + "=" + i * j + "</td>"
         }
         line += "</tr>"
         display+=line;
