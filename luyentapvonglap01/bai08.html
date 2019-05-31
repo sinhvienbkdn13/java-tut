@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="play()">Chơi</button>
+    <script>
+       //Bài 8: Game đoán số
+       function play() {
+            var range_start = parseInt(prompt("Nhap so bat dau "));
+            var range_tail = parseInt(prompt("Nhap so ket thuc "));
+            for(var count = 0 ; count < 3 ; count++){
+                var random = Math.floor(Math.random() * (range_tail - range_start) + range_start);
+                var input = prompt("Nhap so du doan");
+                if(input == random) {
+                    alert("Chinh xac! So ban du doan: " + input + "So ngau nhien: " + random );
+                    break;
+                }
+            }
+       }
+    </script>
+</body>
+
+</html>
