@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử. Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị ra mảng đã được sắp xếp.
+        var a =[];
+        var key, j;
+        for(var i = 0; i< 10;i++){
+            var b = parseInt(prompt("Nhap mang 10 phan tu: "));
+            a.push(b);   
+        }
+
+        for(var i = 1; i < a.length; i++ ){
+            key = a[i];
+            j = i - 1;
+            while(j >= 0 && a[j] > key){
+                a[j+1] = a[j];
+                j--;
+            }
+            a[j+1] = key;
+        }
+
+        document.write("<br>")
+        document.write("Mang da sap xep la: ")
+        for(var k in a){
+            document.write(" " + a[k])
+        }
+        
+
+
+    </script>
+</body>
+</html>

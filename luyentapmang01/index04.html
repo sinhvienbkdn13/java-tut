@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //   Viết chương trình khởi tạo/nhập vào một mảng số nguyên và đảo ngược các phần tử trong mảng đó.
+        var A = [0,1,2];
+        var B = [];
+        var n = A.length - 1;
+        // dao nguoc mag
+        for(var i = 0; i <= n; i++){
+            B[i] = A[n-i];
+        }
+
+        document.write("Dao nguoc mang")
+        for(var j in B){
+            document.write(B[j])
+        }
+
+    </script>
+</body>
+</html>

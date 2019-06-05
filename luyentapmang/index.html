@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = [1,2,3,4,5,6,7,8,9,10]  
+
+        // bai 1
+        var sum =0;
+        for(var i in a) {
+            sum += a[i];
+        }
+        document.write("Tong cac gia tri trong mang: " + sum);
+
+        // bai 2
+        document.write("<br>")
+        var sum1 =0;
+        for(var i in a) {
+            if(a[i] % 2 == 0){
+                sum1 += a[i];
+            }
+        }
+        document.write("Tong cac gia tri trong mang: " + sum1);
+
+        // bai 3
+        document.write("<br>")
+        var sum2 =0;
+        for(var i in a) {
+            if(a[i] % 2 != 0){
+                sum2 += a[i];
+            }
+        }
+        document.write("Tong cac gia tri trong mang: " + sum2);
+
+        // bai 4
+        document.write("<br>")
+        var count =0;
+        for(var i in a) {
+            if(a[i] % 2 == 0){
+                count++;
+            }
+        }
+        document.write("So cac gia tri trong mang: " + count);
+
+        // bai 4
+        document.write("<br>")
+        var count1 =0;
+        for(var i in a) {
+            if(a[i] % 2 != 0){
+                count1++;
+            }
+        }
+        document.write("So cac gia tri trong mang: " + count1);
+
+        //document.write("<br>")
+        // bai 5 
+       // var n = parseInt(prompt("Nhap do dai mang: "))
+        //var a = [];
+        //for(var i = 0 ; i < n ;i++ ){
+       //     var b = parseInt(prompt("Nhap so: "))
+      //      a[i] = b;
+       // }
+
+      //  document.write("So phan tu mang: ")
+        //for(var j in a){
+       //     document.write(a[j])
+       // }
+         
+        // 
+        var A = [0,1,2];
+        var B = [];
+        var n = A.length - 1;
+        // dao nguoc mag
+        for(var i = 0; i <= n; i++){
+            B[i] = A[n-i];
+        }
+
+        document.write("Dao nguoc mang")
+        for(var j in B){
+            document.write(B[j])
+        }
+
+        
+
+        
+    </script>
+</body>
+</html>

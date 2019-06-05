@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  Viết chương trình khởi tạo mảng số nguyên. Hiển hiện giá trị lớn nhất trong mảng đó. In ra giá trị trung bình của các phần tử trong mảng.
+        var a =[];
+        for(var i = 0; i< 3;i++){
+            var b = parseInt(prompt("Nhap mang 3 phan tu: "));
+            a.push(b);   
+        }
+
+        var max = a[0];
+        var sum =0;
+        for(var i in a){
+            if(a[i] > max ){
+                max = a[i];
+            }
+            sum+=a[i];
+        }
+        
+        document.write("Gia tri trung binh mang so nguye la : " + sum/3 );
+        document.write("So lon nhat la: " + max );
+
+    </script>
+</body>
+</html>

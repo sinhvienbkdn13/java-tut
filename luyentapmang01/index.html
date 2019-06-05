@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử. Chương trình thực hiện tính và hiển thị xem có bao nhiêu số nguyên lớn hơn hoặc bằng 10.
+        var a =[];
+        for(var i = 0; i< 10;i++){
+            var b = parseInt(prompt("Nhap mang 10 phan tu: "));
+            a.push(b);   
+        }
+
+        var c = [];
+        for(var i in a) {
+            if(a[i] >= 10) {
+                c.push(a[i])
+            }
+        }
+
+        document.write("So nguyen lon hon 10 la: ")
+        for (var i in c){
+             document.write(c[i])
+        }
+
+    </script>
+</body>
+</html>

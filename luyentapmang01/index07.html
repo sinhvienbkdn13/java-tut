@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //   Bài 6- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử, nhập/tạo phần tử số nguyên V. Chương trình tìm xem V có nằm trong mảng số nguyên không? Nếu V thuộc mảng số nguyên thì in ra "V is in the array" còn lại in ra "V is not in the array".
+        var a =[];
+        for(var i = 0; i< 10;i++){
+            var b = parseInt(prompt("Nhap mang 10 phan tu: "));
+            a.push(b);   
+        }
+        
+        var c = parseInt(prompt("kiem tra xem phan tu V co trong mang: "));
+        var isExist = false;
+        for(var i in a){
+            if(c==a[i]){
+                isExist =  true;
+                a.splice(i,1);
+            }
+        }
+
+        if (isExist){
+            document.write("Da xoa phan tu " + c + " trong mang");
+            document.write("mang moi :")
+            for(var j in a){
+                document.write(a[j])
+            }
+        }
+
+        else{
+            document.write("Khong co phan tu " + c + " trong mang");
+        }
+
+    </script>
+</body>
+</html>
