@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = [3,5,2,9,21];
+        var index = [];
+        var index_spilit=[];
+        var count =0;
+        var countSpli = 0;
+        for(var i in a){
+            if(a[i]%2==0){
+                count ++;
+                var putIndex = parseInt(i) +1;;
+                index.push(putIndex);
+            }
+            if(a[i]%3==0 && a[i]%2!=0){
+                countSpli++;
+                var putIndex = parseInt(i) +1;
+                index_spilit.push(putIndex);
+            }
+        }
+        document.write("Co : " + count + " Gia tri chan")
+        document.write("<br>")
+        document.write("O cac vi tri: ")
+        for(var i in index){
+            document.write(index[i] + " ")
+        }
+
+        document.write("<br>")
+        document.write("Co " + countSpli + " so chia het cho 3 nhugn khong chia het cho 2: ")
+        document.write("O cac vi tri: ")
+        for(var i in index_spilit){
+            document.write(index_spilit[i] + " ")
+        }
+    </script>
+</body>
+</html>
