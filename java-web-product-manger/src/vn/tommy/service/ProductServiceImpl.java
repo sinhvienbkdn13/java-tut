@@ -3,6 +3,7 @@ package vn.tommy.service;
 import vn.tommy.model.Product;
 import vn.tommy.model.ProductEntities;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProductServiceImpl implements ProductService {
@@ -36,5 +37,16 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public void delete(int productId) {
         listProduct.remove(productId);
+    }
+
+    public List<Product> search(String keyword) {
+        List<Product> products = new ArrayList<>();
+        listProduct.forEach((lp) -> {
+            if(lp.getName().equals(keyword)){
+                products.add(lp);
+            }
+        });
+
+        return products;
     }
 }

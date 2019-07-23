@@ -35,6 +35,9 @@ public class ProductController extends HttpServlet {
             case "view":
                 detailProduct(request, response);
                 break;
+            case "search":
+                searchProduct(request, response);
+                break;
             default:
                 viewProduct(request, response);
                 break;
@@ -71,5 +74,21 @@ public class ProductController extends HttpServlet {
         listProduct.create(product);
 
         response.sendRedirect("/");
+    }
+
+    private void searchProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String keyword = request.getParameter("keyword");
+        List<Product> products = null;
+        if(keyword != null && !keyword.isEmpty()) {
+            products = listProduct.search(keyword);
+        }
+        else{
+            products = listProduct.findAll();
+        }
+
+        request.setAttribute("products", products);
+        // ad new product
+        RequestDispatcher dispatcher = request.getRequestDispatcher("product/index.jsp");
+        dispatcher.forward(request, response);;
     }
 }

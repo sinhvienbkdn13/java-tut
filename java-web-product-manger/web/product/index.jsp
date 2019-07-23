@@ -26,38 +26,48 @@
         <th scope="col">
             <span style="margin-right: 10%">Setting</span>
             <button type="button" class="btn btn-primary" aria-label="Left Align" data-toggle="modal"
-                    data-target="#createProduct">
+                    data-target="#createProduct" style="margin-right: 10%">
                 Create New Product
-            </button></th>
+            </button>
+        </th>
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${products}" var="product">
-        <tr>
-            <th scope="row">${product.id}</th>
-            <td>${product.name}</td>
-            <td>${product.price}</td>
-            <td>${product.description}</td>
-            <td>${product.producer}</td>
-            <td>
-                <a role="button" class="btn btn-success" aria-label="Left Align"
-                   href="/?action=view&productId=${product.id}">
-                    <i class="material-icons"> remove_red_eye </i>
-                </a>
-                <a role="button" class="btn btn-warning" aria-label="Left Align"
-                   href="/?action=edit&productId=${product.id}">
-                    <i class="material-icons"> edit </i>
-                </a>
-                <a role="button" class="btn btn-danger" aria-label="Left Align"
-                   href="/?action=delete&productId=${product.id}">
-                    <i class="material-icons"> delete </i>
-                </a>
-            </td>
-        </tr>
-    </c:forEach>
+    <c:if test="${!empty products}">
+        <c:forEach items="${products}" var="product">
+            <tr>
+                <th scope="row">${product.id}</th>
+                <td>${product.name}</td>
+                <td>${product.price}</td>
+                <td>${product.description}</td>
+                <td>${product.producer}</td>
+                <td>
+                    <a role="button" class="btn btn-success" aria-label="Left Align"
+                       href="/?action=view&productId=${product.id}">
+                        <i class="material-icons"> remove_red_eye </i>
+                    </a>
+                    <a role="button" class="btn btn-warning" aria-label="Left Align"
+                       href="/?action=edit&productId=${product.id}">
+                        <i class="material-icons"> edit </i>
+                    </a>
+                    <a role="button" class="btn btn-danger" aria-label="Left Align"
+                       href="/?action=delete&productId=${product.id}">
+                        <i class="material-icons"> delete </i>
+                    </a>
+                </td>
+            </tr>
+        </c:forEach>
+    </c:if>
     </tbody>
 </table>
 
+<div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Search name product"
+           aria-label="Recipient's username" aria-describedby="basic-addon2" id="searchBox">
+    <div class="input-group-append">
+        <button class="btn btn-outline-primary" type="button" id="btnSearch">Search</button>
+    </div>
+</div>
 
 <!-- create product-->
 <div class="modal fade" id="createProduct" tabindex="-1" role="dialog" aria-labelledby="createProductTitle"
@@ -120,6 +130,12 @@
             var price = $("#price").val();
             var producer = $("#producer").val();
             window.location.href = "/?action=create&name=" + name + "&description=" + description + "&price=" + price + "&producer=" + producer;
+        });
+
+
+        $("#btnSearch").on('click', function () {
+            var keyword = $("#searchBox").val();
+            window.location.href = "/?action=search&keyword=" + keyword;
         });
     });
 </script>
