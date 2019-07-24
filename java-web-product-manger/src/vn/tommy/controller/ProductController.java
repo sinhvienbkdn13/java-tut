@@ -31,12 +31,16 @@ public class ProductController extends HttpServlet {
             case "edit":
                 break;
             case "delete":
+                deleteProduct(request, response);
                 break;
             case "view":
                 detailProduct(request, response);
                 break;
             case "search":
                 searchProduct(request, response);
+                break;
+            case "sort":
+                sortProduct(request, response);
                 break;
             default:
                 viewProduct(request, response);
@@ -90,5 +94,15 @@ public class ProductController extends HttpServlet {
         // ad new product
         RequestDispatcher dispatcher = request.getRequestDispatcher("product/index.jsp");
         dispatcher.forward(request, response);;
+    }
+
+    private void deleteProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int productId = Integer.parseInt(request.getParameter("productId"));
+        listProduct.delete(productId);
+        response.sendRedirect("/");
+    }
+    private void sortProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        listProduct.sortProduct();
+        response.sendRedirect("/");
     }
 }

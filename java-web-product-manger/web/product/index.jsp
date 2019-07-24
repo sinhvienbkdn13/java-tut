@@ -29,6 +29,9 @@
                     data-target="#createProduct" style="margin-right: 10%">
                 Create New Product
             </button>
+            <a href="/?action=sort" type="button" class="btn btn-primary" aria-label="Left Align" >
+                Sort Product
+            </a>
         </th>
     </tr>
     </thead>

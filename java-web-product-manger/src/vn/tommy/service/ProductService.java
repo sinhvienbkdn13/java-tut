@@ -14,4 +14,6 @@ public interface ProductService {
     void update(int productId, Product product);
 
     void delete(int productId);
+
+    void sortProduct();
 }
